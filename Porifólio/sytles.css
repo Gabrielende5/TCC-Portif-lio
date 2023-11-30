@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+* { 
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-white: #fff;
+    --color-cyan: #00ffff;
+    --color-black: #000;
+    --color-blue: #00158a;
+}
+/* O "*" significa que é geral  */
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+body {
+    font-family: 'Nova Square', sans-serif;
+}
+#person { /* "#" pois é id */  
+    
+    height: 100vh;  /* o "100vh" é 100% da tela */  
+    width: 100%;
+    background-color: var(--color-black);
+    display: flex;
+    align-items: center;
+}
+.person-content{ /* "." pois é class */  
+    height: 100%;
+    width: 50%;
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: center; /* Esse é no eixo horizontal */  
+    align-items: center; /* Esse é no eixo vertical */  
+    flex-direction: column;
+}
+.person-content div h1{ /* Ou seja, ele ta na classe "person-content" entrando em todas as "div" e depois entrando todos os "h1" */  
+    padding: 0px 4px;
+    color: transparent; /* Transparente pois quando vai abrir o site n terá nada, porém depois de um tempo irá aparecer pela animação*/  
+    font-size: 4.5rem; /* "rem" é uma unidade de medida basiada na quantia de px colocada na "font-size" do "html", seria praticamente colocar 45px na situação*/  
+    line-height: 6rem;
+    animation: written_text  .5s ease forwards; /* Ordem: variavel + tempo de duração + efeito da animação + permanencia ou não (se não for ficar coloca nada)*/  
+    position: relative; /* Se não tivesse ele relativo, o "span" vai para o topo da pagina */  
+    width: fit-content;
+}
+.person-content div h1:nth-child(1){ /* pode colocar "person-content div" ou colocar apenas "person-name" */  /* O "nth-child(1)" significa que está referenciando ao primeiro h1 */  
+    animation-delay: 1s;
+}
+.person-content div h1:nth-child(2){  
+    animation-delay: 2s;
+}
+.person-content div h1:nth-child(3){
+    animation: written_text_name .1s ease forwards;
+    animation-delay: 3s;
+}
+.person-content div h1 span{
+    position: absolute; 
+    top: 0;
+    left: 0;  
+    width: 0px;
+    height: 100%; /* Se não tiver 100% vai ter um espaço entre as linhas */  
+    background-color: var(--color-cyan);
+    animation: written_text_box 1s ease;
+    animation-delay: .5s;
+}
+.person-content div h1:nth-child(1) span{
+    animation-delay: .5;
+}
+.person-content div h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+.person-content div h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+.person-name {
+    margin-top: 11rem;
+}
+.stacks-content{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 6rem;
+}
+.stacks-content h3 {
+    color: var(--color-white);
+    font-size: 1.15rem;
+    margin-left: 20px;
+}
+.stacks{
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* "row" é para forçar que fique em linha */  
+}
+.stacks ul li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+}
+.stacks ul li img {
+    width: 30px;
+    height: auto;
+    transition: transform .3s ease; /* Para se ter uma transição mais suave quando for selecionar a imagem */  
+
+}
+.stacks ul li div img:hover{ /* Isso é para que seja possível selecionar a imagem */  
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.stacks ul li div:hover::after{ /* "hover::after" é para que apareça o nome depois de selecionado */ 
+    content: attr(data); /* significa que "attr" (atributo) irá referenciar o "data", para que assim cada imagem tenha seu nome proprio e não o mesmo */ 
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    color:var(--color-white);
+}
+.person-background{
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(./img/imagem-fundo-final.avif); /* Faz a imagem ser o fundo */ 
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1 ;
+
+}
+.links img{
+    width: 30px;
+    height: 30px;
+    margin: 10px; 
+    filter: brightness(.8); 
+    transition: all .3s ease;
+   
+}
+.links a{
+    position: relative;
+}
+.links a img:hover{
+    transform: scale(1.2);
+    cursor:pointer;
+    filter: brightness(1); /* Faz com que a imagem fique mais transparente ao selecionada */
+}
+.person-background::after{ /* Isso é para ter um fundo mais escudo, um efeito degrade */ 
+    content: "";
+    position: absolute; /* Não esquecer de colocar o "position:relative" no "pai" dele */ 
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .7;
+    z-index: -1;  /* esse "z-index" fala a hierarquia de quem fica em cima de quem, sendo que o padrão é 0 */  
+    background: 
+        linear-gradient(90deg /* deg = graus */ , transparent 30%, var(--color-black))
+}
+.wrapper-profile-photo {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding: 14px;
+    margin: 20px 15px;
+    border-radius: 50%;
+    background: 
+        radial-gradient(rgba(0,0,0,0.15) 60%, transparent 0),
+        radial-gradient(#000 68%, transparent 0),
+        linear-gradient(to top right, #ffa500 0%, #ff1493 100%);
+}
+.profile-photo{
+    border-radius: 50%;
+    width: 100%;
+
+}
+
+@keyframes written_text { /* "keyframes" é responsável por gerenciar a animação */  
+    100% /* Quando a animação estiver em 100% irá acontecer o que está abaixo */  {
+
+        color: var(--color-white) /* Cor que vai ficar após a animação */  
+    }
+}
+@keyframes written_text_name{
+    100%{
+        color: var(--color-blue);
+    }
+}
+@keyframes written_text_box{
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+/* Dica de teclas utilizadas: 
+Alt + Shift + seta para baixo -> tecla utilizada para dar um ctrl C + ctrl V mais rápido*/
