@@ -5,8 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio - Gabriel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Instancia que permite ter acesso à alguns icones com maior facilidade, porém esses icones pedem mais da internet do que uma foto -->
 </head>
 <body>
+    <section id="header">
+        <a class="header-title" href="/">
+            <h1>
+                Gabriel.dev
+            </h1>
+        </a> 
+        <nav class="navbar">
+            <ul>
+                <li><a href="#person">Home</a></li> <!-- Essa "#person" é o que faz quando vc clicar em "Home" ir para a área de Home -->
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contacts">Contatos</a></li>
+            </ul>
+        </nav>
+    </section>
     <section id="person">  <!-- Person é a tela inteira -->
         <div class="person-content">
             <div class="person-name" >
@@ -67,8 +83,122 @@
         </div>
 
     </section>
+    <section id="about">
+        <div class="background-about">
+            <div class="img-wrapper">
+                <img src="./img/img-2.jpg" alt="img2-notebook">
+            </div>
+        </div>
+        <div class="box-about">
+            <div class="section-subtitle">
+                <h2>
+                    <p>💻</p>
+                    <p><span>Desenvolvedor</span> Full Stack</p>
+                </h2>
+            </div>
+            <h3>
+                Sou um Desenvolvedor Full Stack com experiências em
+                <p>  <!-- Separou em "p" para colocar efeitos apenas nessa parte -->
+                    HTML, CSS, JavaScript, React.Js e Node.Js
+                </p>
+            </h3>
+            <h4>
+                Meu nome é Gabriel Lamartine, tenho 17 anos. Atualmente estou estudando Web e Games na SuperGeeks, além de estar entrando na faculdade de engenharia da computação.
+            </h4>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="projects-title">
+            <h2>Projetos ⚒️</h2>
+        </div>
+        <div class="wrapper-projects">  <!-- Esse será o envelope dos cards dos projetos -->
+            <div class="card-projects">
+                <div class="content-project">
+                    <div class="image-project">
+                        <a href="/">
+
+                        </a>
+                        <img src="./img/MercadoLivre.jpg" alt="img-conversor-1">
+                    </div>
+                    <span>Loja</span>
+                    <p>Esse projeto simula o Mercado Livre</p>
+                    <div class="cta-project">
+                        <a href="https://github.com/Gabrielende5/Loja" target="_blank">
+                            Código
+                            <i class="fa-brands fa-github"></i>  <!-- Icone do Git Hub -->
+                        </a>
+                        <a href="/">
+                            Site
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> <!-- Icone do Site -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-projects">
+                <div class="content-project">
+                    <div class="image-project">
+                        <a href="/">
+
+                        </a>
+                        <img src="./img/formulário.jpg" alt="img-conversor-2">
+                    </div>
+                    <span>Formulário</span>
+                    <p>Esse projeto simula um formulário, esse guardando informações em um banco de dados</p>
+                    <div class="cta-project">
+                        <a href="https://github.com/Gabrielende5/javascript-banco-de-dados-fireba" target="_blank">
+                            Código
+                            <i class="fa-brands fa-github"></i>  <!-- Icone do Git Hub -->
+                        </a>
+                        <a href="/">
+                            Site
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> <!-- Icone do Site -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacts">
+        <div class="contanct-icon-content">
+            <h2>Contato 📞</h2>
+        </div>
+        <div class="contact-icons-wrapper"> <!-- A grande caixa com a localização e o email-->
+            <div class="contact-icon-content">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="contact-info">
+                    <span>Localização</span>
+                    <p>Taubaté, São Paulo, Brasil</p>
+                </div>
+            </div>
+            <div class="contact-icon-content">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-square-envelope"></i>
+                </div>
+                <div class="contact-info">
+                    <span>E-mail</span>
+                    <a href="/">gabrielende53@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="footer">
+        <div class="container-footer">
+            <h2>Feito por</h2>
+            <h3>Gabriel Lamartine ©️ 2023</h3>
+        </div>
+    </section>
+    <script src="scripts.js"></script>
 </body>
 </html>
 <!-- Dica de teclas utilizadas
 div.stacks -> cria uma div com a classe stacks diretamente 
 div#stacks -> cria uma div com o id stacks diretamente -->
+<!-- Sites utilizados
+    https://unsplash.com/pt-br
+    https://emojiterra.com/pt/
+    https://cdnjs.com/libraries/font-awesome
+    https://fontawesome.com
+ -->
